@@ -19,7 +19,7 @@ http:request("http://api.openweathermap.org/data/2.5/weather?q=<>,<>,<>&appid=<>
     
     delta = (math.pow(b, 2) - ((4 * a) * c))
 
-print("delta jest równa:", delta)
+print("delta jest rÃ³wna:", delta)
 function qwer(a, b, c, delta)
 
 if delta>0 then
@@ -31,10 +31,8 @@ if delta>0 then
 elseif delta==0 then
    print("pierwiastek kwadratowy:")
    x1=((-b) / (2 * a))
-print(round1(x1))
-
 else
-  print("funkcja nie posiada pierwiastków kwadratowych")
+  print("funkcja nie posiada pierwiastkÃ³w kwadratowych")
  end
 end
 
