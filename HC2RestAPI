@@ -31,9 +31,9 @@ http:request("http://api.openweathermap.org/data/2.5/weather?q=<>,<>,<>&appid=<>
   		  x1=((-b) / (2 * a))
     else
   		print("funkcja nie posiada pierwiastków kwadratowych")
- 	end,
+    end
       fibaro:debug(tonumber(string.format("%." .. (2 or 0) .. "f", x1)))
-      
+end,
   error = function(errorcode) 
       fibaro:debug("error=" .. errorcode)
     end 
