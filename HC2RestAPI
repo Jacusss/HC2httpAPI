@@ -1,0 +1,47 @@
+--[[
+%% properties
+%% globals
+--]]
+
+local http = net.HTTPClient()
+http:request("http://api.openweathermap.org/data/2.5/weather?q=<>,<>,<>&appid=<>&units=metric&lang=<>",
+  {
+  options = {method = 'GET'}, 
+    success = function(response)
+    t=json.decode(response.data)
+  --   for k, v in pairs(t) do
+     -- print(k, v)
+    --end
+      a=(t.main.temp)
+      b=(t.main.pressure)
+      c=(t.main.humidity)
+      print(a,b,c)
+    
+    delta = (math.pow(b, 2) - ((4 * a) * c))
+
+print("delta jest równa:", delta)
+function qwer(a, b, c, delta)
+
+if delta>0 then
+   print("delta > 0 ")
+   print("pierwiastki kawadratowe:")
+   x1=(((-b) - math.sqrt(delta)) / (2 * a))
+   x2=(((-b) + math.sqrt(delta)) / (2 * a))
+   fibaro:debug(tonumber(string.format("%." .. (2 or 0) .. "f", x2)))
+elseif delta==0 then
+   print("pierwiastek kwadratowy:")
+   x1=((-b) / (2 * a))
+print(round1(x1))
+
+else
+  print("funkcja nie posiada pierwiastków kwadratowych")
+ end
+end
+
+  fibaro:debug(qwer( a, b, c, delta ) )
+    fibaro:debug(tonumber(string.format("%." .. (2 or 0) .. "f", x1)))
+    end,
+  error = function(errorcode) 
+      fibaro:debug("error=" .. errorcode)
+    end 
+  })
