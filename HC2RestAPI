@@ -6,9 +6,7 @@
 local http = net.HTTPClient()
 http:request("http://api.openweathermap.org/data/2.5/weather?q=<>,<>,<>&appid=<>&units=metric&lang=<>",
   {
-  options = {method = 'GET'}, 
-	{
-	options = {method = 'GET'}, 
+    options = {method = 'GET'}, 
     success = function(response)
    	  t=json.decode(response.data)
       a=(t.main.temp)
